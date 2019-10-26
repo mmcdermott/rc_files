@@ -20,6 +20,3 @@ alias autoremove='sudo apt autoremove'
 
 # Tmux should always start in 64-bit color mode.
 alias tmux='tmux -2'
-
-# For SSH keys that live in a different spot:
-alias setup_ssh='eval "$(ssh-agent -s)"; ssh-add ~/.ssh/private/id_rsa'
