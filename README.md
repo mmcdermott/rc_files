@@ -17,9 +17,13 @@ To install, simply download the zip file and extract the font files inside to yo
 (e.g., `~/.local/share/fonts/` on linux). You then need to configure your shell to use that font by default:
 
 ```
+mkdir tmp_fonts
+cd tmp_fonts
 wget https://github.com/ryanoasis/nerd-fonts/releases/download/v2.3.3/RobotoMono.zip
 unzip RobotoMono.zip
 mv *.ttf ~/.local/share/fonts
+cd ..
+rm -r tmp_fonts
 ```
 
 You may need to restart things to get this to work. This step is necessary for some packages in `neovim` and
@@ -53,3 +57,7 @@ I use [Tmux Plugin Manager](https://github.com/tmux-plugins/tpm) for tmux plugin
 per directions on their source.
 
 The packages I used are all listed in the `.tmux.conf` file.
+
+# Neovim
+Neovim packages are managed by Vim-Plug, and the configuration files `init.vim` and `config.lua` both need to
+be placed in `~/.config/nvim/`

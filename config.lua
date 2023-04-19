@@ -17,3 +17,10 @@ require("nvim-tree").setup({
     dotfiles = true,
   },
 })
+
+require('gitsigns').setup()
+require("bufferline").setup{}
+require('lualine').setup()
+
+vim.g.material_style = "darker"
+vim.cmd 'colorscheme material'
