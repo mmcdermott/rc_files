@@ -1,7 +1,3 @@
-# I often want to see a list of all elements in a directory, with human readable
-# syntax.
-alias lh='ls -lah'
-
 # enable color support of ls and also add handy aliases
 if [ -x /usr/bin/dircolors ]; then
     test -r ~/.dircolors && eval "$(dircolors -b ~/.dircolors)" || eval "$(dircolors -b)"
@@ -11,12 +7,6 @@ if [ -x /usr/bin/dircolors ]; then
     alias fgrep='fgrep --color=auto'
     alias egrep='egrep --color=auto'
 fi
-
-# Common package management commands should not take 3 commands apiece.
-alias install='sudo apt-get install'
-alias update='sudo apt-get update'
-alias upgrade='sudo apt-get upgrade'
-alias autoremove='sudo apt autoremove'
 
 # Tmux should always start in 64-bit color mode.
 alias tmux='tmux -2'

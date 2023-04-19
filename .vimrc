@@ -9,7 +9,7 @@ call vundle#rc()
 " let Vundle manage Vundle
 " required!
 "
-Plugin 'gmarik/vundle'
+Plugin 'gmarik/Vundle.vim'
 
 
 " Status Bar, Themes, & Colors
@@ -26,11 +26,8 @@ Plugin 'Chiel92/vim-autoformat'
 "   Searching
 Plugin 'kien/ctrlp.vim'
 let g:ctrlp_extensions = ['tag', 'buffertag', 'undo', 'changes']
-"   NERDTree
-Plugin 'scrooloose/nerdtree'
-Plugin 'Xuyuanp/nerdtree-git-plugin'
-map <C-e> :NERDTreeToggle<CR>:NERDTreeMirror<CR>
-let NERDTreeIgnore=['\.class', '\.pyc', '\~$', '\.swo$', '\.swp$', '\.git', '\.hg', '\.svn', '\.bzr', '\.o']
+
+map <C-e> :NvimTreeToggle<CR>
 
 " Tag browsing
 Plugin 'majutsushi/tagbar'
@@ -69,41 +66,9 @@ set undolevels=1000
 
 " git Integration
 Plugin 'airblade/vim-gitgutter'
-Plugin 'tpope/vim-fugitive'
 
 " Working with files
 Plugin 'kshenoy/vim-signature'
-
-" Autocompletion & Syntax
-" Plugin 'Valloric/YouCompleteMe'
-"let g:ycm_register_as_syntastic_checker = 1 "default 1
-"let g:Show_diagnostics_ui = 1 "default 1
-"
-""will put icons in Vim's gutter on lines that have a diagnostic set.
-""Turning this off will also turn off the YcmErrorLine and YcmWarningLine
-""highlighting
-"let g:ycm_enable_diagnostic_signs = 1
-"let g:ycm_enable_diagnostic_highlighting = 0
-"let g:ycm_always_populate_location_list = 1 "default 0
-"let g:ycm_open_loclist_on_ycm_diags = 1 "default 1
-"
-"
-"let g:ycm_complete_in_strings = 1 "default 1
-"let g:ycm_collect_identifiers_from_tags_files = 0 "default 0
-"let g:ycm_path_to_python_interpreter = '' "default ''
-"
-"let g:ycm_server_use_vim_stdout = 0 "default 0 (logging to console)
-"let g:ycm_server_log_level = 'info' "default info
-"
-"let g:ycm_global_ycm_extra_conf = '~/.ycm_extra_conf.py'  "where to search for .ycm_extra_conf.py if not found
-"let g:ycm_confirm_extra_conf = 1
-"
-"let g:ycm_goto_buffer_command = 'same-buffer' "[ 'same-buffer', 'horizontal-split', 'vertical-split', 'new-tab' ]
-"let g:ycm_filetype_whitelist = { '*': 1 }
-"let g:ycm_key_invoke_completion = '<C-Space>'
-
-
-nnoremap <C-q> :YcmForceCompileAndDiagnostics <CR>
 
 " Buffers
 Plugin 'qpkorr/vim-bufkill'
@@ -118,6 +83,7 @@ Plugin 'kern/vim-es7'
 Plugin 'othree/javascript-libraries-syntax.vim'
 Plugin 'pangloss/vim-javascript'
 Plugin 'ternjs/tern_for_vim'
+Plugin 'leafgarland/typescript-vim'
 let g:used_javascript_libs = 'react,jquery'
 let g:javascript_enable_domhtmlcss = 1
 "   JSX:
@@ -127,6 +93,8 @@ let g:jsx_ext_required = 0
 let g:tex_flavor='latex'
 Plugin 'lervag/vimtex'
 let g:vimtex_indent_on_ampersands = 0
+"   Python:
+Plugin 'vim-python/python-syntax'
 
 " Line num and position
 set relativenumber
@@ -178,6 +146,9 @@ set updatetime=4000
 " <TAB>: completion.
 "inoremap <expr><TAB> pumvisible() ? "\<C-n>" : "\<TAB>"
 "inoremap <expr><S-TAB> pumvisible() ? "\<C-p>" : "\<TAB>"
+
+"Remove all trailing whitespace by pressing F5
+nnoremap <F5> :let _s=@/<Bar>:%s/\s\+$//e<Bar>:let @/=_s<Bar><CR>
 
 " Enable omni completion.
 autocmd FileType css setlocal omnifunc=csscomplete#CompleteCSS
