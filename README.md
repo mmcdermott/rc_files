@@ -61,3 +61,11 @@ The packages I used are all listed in the `.tmux.conf` file.
 # Neovim
 Neovim packages are managed by Vim-Plug, and the configuration files `init.vim` and `config.lua` both need to
 be placed in `~/.config/nvim/`
+
+Vim-plug must be installed like normal. After, start neovim and run PlugInstall. Then, close and re-open
+neovim. Next, run 
+```
+TSInstall python markdown markdown_inline javascript typescript bash vim lua yaml json html bibtex css diff gitcommit latex r sql
+```
+
+or just `TSInstall all` if you don't want to be selective.
