@@ -42,13 +42,15 @@ and down-arrow perform reverse history search given the text currently typed.
 "\e[B":history-search-forward
 ```
 
- To activate Liquidprompt, install it as normal then just add this to the `.bashrc` or equivalent:
- ```
- # Only load Liquidprompt in interactive shells, not from a script or from scp
-[[ $- = *i* ]] && source ~/liquidprompt/liquidprompt
- ```
+## Liquidprompt
+After installing liquidprompt, you also need to enable it. Add this to your `~/.bashrc` or equivalent:
 
- I don't currently have any liquidprompt configuration options overwritten.
+```bash
+# Only load Liquidprompt in interactive shells, not from a script or from scp
+[[ $- = *i* ]] && source ~/liquidprompt/liquidprompt
+```
+
+I don't currently have any liquidprompt configuration options overwritten.
 
 I also add some aliases stored in the `~/.bash_aliases` file.
 
@@ -61,3 +63,9 @@ The packages I used are all listed in the `.tmux.conf` file.
 # Neovim
 Neovim packages are managed by Vim-Plug, and the configuration files `init.vim` and `config.lua` both need to
 be placed in `~/.config/nvim/`
+
+To install Vim-plug:
+```bash
+sh -c 'curl -fLo "${XDG_DATA_HOME:-$HOME/.local/share}"/nvim/site/autoload/plug.vim --create-dirs \
+       https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim'
+```

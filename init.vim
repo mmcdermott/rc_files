@@ -29,6 +29,9 @@ Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
 
 Plug 'marko-cerovac/material.nvim'
 
+Plug 'github/copilot.vim'
+
+Plug 'lukas-reineke/indent-blankline.nvim'
 
 " Initialize plugin system
 " - Automatically executes `filetype plugin indent on` and `syntax enable`.
