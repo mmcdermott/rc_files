@@ -18,6 +18,7 @@ To install, simply download the zip file and extract the font files inside to yo
 
 ```
 mkdir tmp_fonts
+mkdir ~/.local/share/fonts
 cd tmp_fonts
 wget https://github.com/ryanoasis/nerd-fonts/releases/download/v2.3.3/RobotoMono.zip
 unzip RobotoMono.zip
@@ -61,7 +62,7 @@ per directions on their source.
 The packages I used are all listed in the `.tmux.conf` file.
 
 # Neovim
-Neovim packages are managed by Vim-Plug, and the configuration files `init.vim` and `config.lua` both need to
+Neovim packages are managed by [Vim-Plug](https://github.com/junegunn/vim-plug), and the configuration files `init.vim` and `config.lua` both need to
 be placed in `~/.config/nvim/`
 
 To install Vim-plug:
@@ -69,3 +70,9 @@ To install Vim-plug:
 sh -c 'curl -fLo "${XDG_DATA_HOME:-$HOME/.local/share}"/nvim/site/autoload/plug.vim --create-dirs \
        https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim'
 ```
+After, start neovim and run PlugInstall. Then, close and re-open neovim. Next, run 
+```
+TSInstall python markdown markdown_inline javascript typescript bash vim lua yaml json html bibtex css diff gitcommit latex r sql
+```
+
+or just `TSInstall all` if you don't want to be selective.
