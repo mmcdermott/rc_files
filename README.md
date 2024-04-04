@@ -3,7 +3,7 @@ This repository details my typical development stack. It is designed for use on 
 GUI access) and largely uses terminal based tools. It is current as of 4/19/2023.
 
 The basic stack of tools I use are:
-  * `bash` and [Liquidprompt](https://github.com/nojhan/liquidprompt) for shell
+  * `bash` and [starship](https://starship.rs/) for shell
   * `tmux` for terminal multiplexing and session management.
   * `Neovim` for editing.
   * Github Copilot integrated into neovim.
@@ -43,15 +43,13 @@ and down-arrow perform reverse history search given the text currently typed.
 "\e[B":history-search-forward
 ```
 
-## Liquidprompt
-After installing liquidprompt, you also need to enable it. Add this to your `~/.bashrc` or equivalent:
+## Starship
+After installing starship and moving `starship.toml` to `.config/`, you also need to enable it. Add this to
+your `~/.bashrc` or equivalent:
 
 ```bash
-# Only load Liquidprompt in interactive shells, not from a script or from scp
-[[ $- = *i* ]] && source ~/liquidprompt/liquidprompt
+eval "$(starship init bash)"
 ```
-
-I don't currently have any liquidprompt configuration options overwritten.
 
 I also add some aliases stored in the `~/.bash_aliases` file.
 
