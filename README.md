@@ -60,17 +60,8 @@ per directions on their source.
 The packages I used are all listed in the `.tmux.conf` file.
 
 # Neovim
-Neovim packages are managed by [Vim-Plug](https://github.com/junegunn/vim-plug), and the configuration files `init.vim` and `config.lua` both need to
-be placed in `~/.config/nvim/`
+Neovim packages are managed by [lazy.nvim](https://github.com/folke/lazy.nvim). The configuration files I use
+with `lazy.nvm` are in the `.config/nvim` directory and need to be copied to the local `.config/nvim`
+directory on your machine.
 
-To install Vim-plug:
-```bash
-sh -c 'curl -fLo "${XDG_DATA_HOME:-$HOME/.local/share}"/nvim/site/autoload/plug.vim --create-dirs \
-       https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim'
-```
-After, start neovim and run PlugInstall. Then, close and re-open neovim. Next, run 
-```
-TSInstall python markdown markdown_inline javascript typescript bash vim lua yaml json html bibtex css diff gitcommit latex r sql
-```
-
-or just `TSInstall all` if you don't want to be selective.
+To install lazy.nvim, follow the instructions here: https://lazy.folke.io/installation
